@@ -1,37 +1,38 @@
 const express = require('express');
 const app = express();
-
 const https = require('https');
 const cookieParser = require('cookie-parser');
 var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
-
 const MongoClient = require('mongodb').MongoClient;
-const CONNECTION_URL = "mongodb+srv://ychua:cXPF5lDHxmvNo0ul@nanostacko.ahrgsi7.mongodb.net/?retryWrites=true&w=majority";
+
+const CONNECTION_URL = "mongodb+srv://antomanto:nanostacko@nanostacko.ubay5wc.mongodb.net/test";
 const DATABASE_NAME = "nanostacko"; // you can change the database name
 var database, collection;
 
-app.use(cookieParser());
+MongoClient.connect(CONNECTION_URL, { useNewUrlParser: true }, (error, client) => {
+  if(error) throw error;
 
-app.use(express.urlencoded({extended: true}));
-app.get("/", function(req, res){
-  res.render('home');
+  database = client.db(DATABASE_NAME);
+  collection = database.collection("newcollection"); // you can change the collection name
 });
+app.use(cookieParser());
+app.use(express.urlencoded({extended: true}));
 
-app.set("view engine", "ejs");
+app.set("view engine","ejs");
+app.get('/', function(req, res){
+    res.render('home');
+  });
 
-app.post("/", function(req, res){
+app.post('/',(req, res)=>{
   collection.insertOne(req.body, (err, result) => {  
     if (err) return console.log(err)
 
     console.log('saved to database')
-    res.redirect('/') // or do something else here
   })
-
   function formv3(){
     // Create the new request 
     var xhr = new XMLHttpRequest();
-    var url = 'https://api.hsforms.com/submissions/v3/integration/submit/7177581/2ec46888-7cf7-4d58-9cee-9fcaca397feb'
-    
+    var url = 'https://api.hsforms.com/submissions/v3/integration/submit/9381732/21cf36dc-c665-4656-912c-8a338a09253b';
     // Example request JSON:
     var data = {
       "fields": [
@@ -52,7 +53,7 @@ app.post("/", function(req, res){
     }
 
     var final_data = JSON.stringify(data)
-
+console.log(final_data);
     xhr.open('POST', url);
     // Sets the value of the 'Content-Type' HTTP request headers to 'application/json'
     xhr.setRequestHeader('Content-Type', 'application/json');
@@ -73,20 +74,15 @@ app.post("/", function(req, res){
     // Sends the request 
     
     xhr.send(final_data)
+    console.log('xhr runs');
  }
 
  formv3();
-});
-
-
-MongoClient.connect(CONNECTION_URL, { useNewUrlParser: true }, (error, client) => {
-  if(error) throw error;
-
-  database = client.db(DATABASE_NAME);
-  collection = database.collection("newcollection"); // you can change the collection name
+ console.log('formv3 has executed?');
+ res.redirect("/") // or do something else here
+})
 
   // Start the application after the database connection is ready
   app.listen(3000, () => {
-    console.log('This app is running on port 3000')
+    console.log('This app is running on port 3000');
   });
-});
