@@ -23,7 +23,7 @@ app.get('/', function(req, res){
     res.render('home');
   });
 
-app.post('/',(req, res)=>{
+app.post('/',(req, res) => {
   collection.insertOne(req.body, (err, result) => {  
     if (err) return console.log(err)
 
