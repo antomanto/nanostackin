@@ -10,7 +10,7 @@ const CONNECTION_URL = "mongodb+srv://antomanto:nanostacko@nanostacko.ubay5wc.mo
 const DATABASE_NAME = "nanostacko"; // you can change the database name
 var database, collection;
 
-// require('dotenv').config();
+require('dotenv').config();
 const request = require('request-promise-native');
 const NodeCache = require('node-cache');
 const session = require('express-session');
