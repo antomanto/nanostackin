@@ -189,10 +189,10 @@ app.post("/imports", async (req, res) => {
      console.log('access token' + accessToken);
      const searchResults = await importGet(accessToken);
      console.log('search results' + searchResults);
-     var importResults = JSON.stringify(searchResults.id);
-     var parsedResults = JSON.parse(importResults);
+     var importResults = JSON.stringify(searchResults);
+    //  var parsedResults = JSON.parse(importResults);
      
-     res.render('importsresults', {importsdata: parsedResults});
+     res.render('importsresults', {importsdata: importResults});
        } else {
          res.redirect('/imports');
        }
