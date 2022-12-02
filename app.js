@@ -137,26 +137,24 @@ app.get('/admin', (req, res) => {
  app.post('/admin', async (req, res) => {
   if (isAuthorized(req.sessionID)) {
     var searchInput = req.body.searchinput; // Store submitted form input into variable 
-    console.log(searchInput);
-var url = 'https://api.hubapi.com/contacts/v1/search/query?q=' + searchInput;
+    var url = 'https://api.hubapi.com/contacts/v1/search/query?q=' + searchInput;
 
-const contactSearch = async (accessToken) => {
- try {
-  const headers = {
-	 Authorization: `Bearer ${accessToken}`,
-	 'Content-Type': 'application/json'
-	};
-	const data = await request.get(url, {headers: headers, json: true});
-	return data;
- } catch (e) {
-  return {msg: e.message}
- }};
+    const contactSearch = async (accessToken) => {
+    try {
+      const headers = {
+      Authorization: `Bearer ${accessToken}`,
+      'Content-Type': 'application/json'
+      };
+      const data = await request.get(url, {headers: headers, json: true});
+      return data;
+    } catch (e) {
+      return {msg: e.message}
+    }};
 
-const accessToken = await getAccessToken(req.sessionID);
-console.log(accessToken);
-const searchResults = await contactSearch(accessToken);
-var contactResults = JSON.stringify(searchResults.contacts);
-var parsedResults = JSON.parse(contactResults);
+    const accessToken = await getAccessToken(req.sessionID);
+    const searchResults = await contactSearch(accessToken);
+    var contactResults = JSON.stringify(searchResults.contacts);
+    var parsedResults = JSON.parse(contactResults);
 
 res.render('searchresults', {contactsdata: parsedResults});
   } else {
@@ -182,14 +180,16 @@ app.post("/imports", async (req, res) => {
         'Content-Type': 'application/json'
        };
        const data = await request.get(url, {headers: headers, json: true});
-       return data;
+       return data;       
       } catch (e) {
        return {msg: e.message}
       }};
      
      const accessToken = await getAccessToken(req.sessionID);
+     console.log('access token' + accessToken);
      const searchResults = await importGet(accessToken);
-     var importResults = JSON.stringify(searchResults);
+     console.log('search results' + searchResults);
+     var importResults = JSON.stringify(searchResults.id);
      var parsedResults = JSON.parse(importResults);
      
      res.render('importsresults', {importsdata: parsedResults});
