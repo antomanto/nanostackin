@@ -163,6 +163,41 @@ res.render('searchresults', {contactsdata: parsedResults});
   }
 });
 
+app.get('/imports', (req, res) => { 					  	
+  if (isAuthorized(req.sessionID)) {
+   res.render('imports');
+  } else {
+   res.render('adminInstall');
+  }
+ });
+
+app.post("/imports", async (req, res) => {
+  if (isAuthorized(req.sessionID)) {
+    var url = 'https://api.hubapi.com/crm/v3/imports/';
+    const importGet = async (accessToken) => {
+      try {
+       const headers = {
+        Authorization: `Bearer ${accessToken}`,
+        'Content-Type': 'application/json'
+       };
+       const data = await request.get(url, {headers: headers, json: true});
+       return data;
+      } catch (e) {
+       return {msg: e.message}
+      }};
+     
+     const accessToken = await getAccessToken(req.sessionID);
+     const searchResults = await importGet(accessToken);
+     var contactResults = JSON.stringify(searchResults.contacts);
+     var parsedResults = JSON.parse(contactResults);
+     
+     res.render('imports', {importsdata: parsedResults});
+       } else {
+         res.redirect('/imports');
+       }
+});
+
+
 
 
 app.get("/", function(req, res){

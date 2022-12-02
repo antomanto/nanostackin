@@ -1,0 +1,19 @@
+<html>
+    <body>
+    <h1>Get active imports in HubSpot</h1>
+    <div class="importactive">
+       <form action="/imports" method="post">
+           <input type="submit" name="imports" value="Access all imports">
+       </form>
+    </div>
+    <div>
+        <% if (importsdata!='') { %>
+           <div class="importresults" align="center">
+               <p><%= importsdata.value %></p>
+           </div>
+      <% } else { %>
+       <p>No results</p>
+      <% } %>
+     </div>
+</body>
+</html>
