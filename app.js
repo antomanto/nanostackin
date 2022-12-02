@@ -153,6 +153,7 @@ const contactSearch = async (accessToken) => {
  }};
 
 const accessToken = await getAccessToken(req.sessionID);
+console.log(accessToken);
 const searchResults = await contactSearch(accessToken);
 var contactResults = JSON.stringify(searchResults.contacts);
 var parsedResults = JSON.parse(contactResults);
@@ -188,10 +189,10 @@ app.post("/imports", async (req, res) => {
      
      const accessToken = await getAccessToken(req.sessionID);
      const searchResults = await importGet(accessToken);
-     var contactResults = JSON.stringify(searchResults.contacts);
-     var parsedResults = JSON.parse(contactResults);
+     var importResults = JSON.stringify(searchResults);
+     var parsedResults = JSON.parse(importResults);
      
-     res.render('imports', {importsdata: parsedResults});
+     res.render('importsresults', {importsdata: parsedResults});
        } else {
          res.redirect('/imports');
        }
