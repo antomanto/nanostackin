@@ -31,9 +31,10 @@ const authUrl =
   `&scope=${encodeURIComponent(SCOPES)}` + // scopes being requested by the app
   `&redirect_uri=${encodeURIComponent(REDIRECT_URI)}`; // where to send the user after the consent page
 
-
   app.use(cookieParser());
   app.use(express.urlencoded({extended: true}));
+  app.use("/public", express.static('./public/'));
+
 
 // Use a session to keep track of client ID
 app.use(session({

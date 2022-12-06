@@ -1,70 +1,102 @@
-<html>
+<html lang="en">
   <head>
-<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/9381732.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-<!-- Start of HubSpot Embed Code -->
-<!-- <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/9381732.js"></script> -->
-<!-- End of HubSpot Embed Code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/9381732.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <title>Nanostacko Antomanto</title>
+    <link rel="stylesheet" type="text/css" href="http://localhost:3000/public/css/main.css"> <!--change these before pushing to cyclic-->
+    <link rel="stylesheet" type="text/css" href="http://localhost:3000/css/main.css">
+    <link rel="stylesheet" type="text/css" href="public/css/main.css"> <!--change these before pushing to cyclic-->
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
   </head>
-<!-- <body>
-  <div>
-    My form:
-    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-    <script>
-      hbspt.forms.create({
-        region: "na1",
-        portalId: "9381732",
-        formId: "21cf36dc-c665-4656-912c-8a338a09253b"
-      });
-    </script>
-    Customer's form:
-   <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script><script>
-    hbspt.forms.create({
-        region: "na1",
-        portalId: "8267382",
-        formId: "baf303d9-1c90-42d7-9309-5b06584776da"
-      });
-    </script> 
-    Customer's form:
-    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-<script>
-  hbspt.forms.create({
-    region: "na1",
-    portalId: "19679188",
-    formId: "24f37799-0548-4606-ad02-990a55dfb667"
-  });
-</script>
+<body class="body_home">
+  <header class="nav_component">
+    <nav class="nav_bar nav_wrapper page_padding">
+      <div class="container">
+        <div class="nav_items_wrapper">
+          <div class="nav_button_wrapper">
+            <a class="nav_item_logo" href="/"><div class="logo_emoji">👨🏻‍💻</div></a>
+            <a class="nav_button nav_item_home" href="/admin"><div>admin panel</div></a>
+            <a class="nav_button nav_item_home" href="/imports"><div>get imports</div></a>
+          </div>
+        </div>
     </div>
-</body> -->
-<body>
-  <header>
-    <div><a href="/admin">Admin page</a></div>
-    <div><a href="/imports">Get Imports</a></div>
-    <div></div>
+  </nav>
   </header>
-  <form action="/" method="post">
-    <div class="field">
-        <div class="label">
-            <label for="name">Name</label>
+  <main class="main_wrapper main_home apply_fix_color">
+    <section class="section_hero_panel text_super_duper">
+      <div class="hero_panel_spacing">
+        <div class="hero_panel">
+          <div class="page_padding">
+            <div class="container">
+              <div class="hero_panel_text_wrapper">
+                <div class="intro_text_wrapper" style="will-change: transform; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                  <div class="intro_text_line" style="opacity:1">
+                    <h1 class="text_super_duper intro_text_word">ANTO</h1>
+                    <h1 class="text_super_duper intro_text_word">MANTO</h1>
+                  </div>
+                  <div class="intro_text_line nano_hover" style="opacity:1">
+                    <h1 class="text_super_duper intro_text_word">NANO</h1>
+                    <h1 class="text_super_duper intro_text_word">STACKO</h1>
+                  </div>
+                  <div class="what_nano hide tooltip_text">
+                    <h2 class="text_medium">What is nanostacko?</h2>
+                    <p class="text_smaller">Nanostack (fondly referred as nanostacko) is a course designed to help CSS & PEs alike
+                      upskill their tech stack through the development of webapps.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <input id="name" name="firstname" type="text" value="" placeholder="Name">
-    </div>
-    <div class="field">
-        <div class="label">
-            <label for="email">Email</label>
+      </div>
+    </section>
+    <section>
+      <form action="/" method="post" style="display:none;">
+        <div class="field">
+            <div class="label">
+                <label for="name">Name</label>
+            </div>
+            <input id="name" name="firstname" type="text" value="" placeholder="Name">
         </div>
-        <input id="email" name="email" type="text" value="" placeholder="Email">
-    </div>
-    <div class="field">
-        <div class="label">
-            <label for="text">Message</label>
+        <div class="field">
+            <div class="label">
+                <label for="email">Email</label>
+            </div>
+            <input id="email" name="email" type="text" value="" placeholder="Email">
         </div>
-        <input id="message" name="message" type="text" value="" placeholder="Ask me anything!">
+        <div class="field">
+            <div class="label">
+                <label for="text">Message</label>
+            </div>
+            <input id="message" name="message" type="text" value="" placeholder="Ask me anything!">
+        </div>
+        <div class="button">    
+            <input type="submit" value="Submit" id="submit"></div>
+    </form>
+    </section>
+</main>
+<footer class="footer_component footer_home">
+  <div class="page_padding">
+    <div class="container">
+      <div class="footer_content_wrapper">
+        <div class="footer_item_wrapper">
+          <a href="mailto:antomanto@test.com" class="footer_link_item apply_fg_color">
+            <h3 class="footer_link_text text_small">→ antomanto@test.com</h3>
+          </a>
+          <div class="footer_link_item apply_fg_color">
+            <div class="form_open">
+              <h3 class="footer_link_text text_small">→ Enquiries</h3>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
     </div>
-    <div class="button">    
-        <input type="submit" value="Submit" id="submit"></div>
-</form>
+  </div>
+</footer>
 </body>
 
 </html>
