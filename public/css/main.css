@@ -219,7 +219,7 @@ h1, h2, h3, h4, h5, p, a {
     opacity: 1;
     filter: alpha(opacity=100);
     top: -10em;
-    left: 25em;
+    left: 22em;
     z-index: 99;
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
@@ -236,8 +236,8 @@ h1, h2, h3, h4, h5, p, a {
         line-height: 1.5em;
         padding: 16px 15px;
         width: 240px;
-        top: -4em;  /*-- this is the original position of the tooltip when it's hidden */
-        left: 20em;
+        top: -9em;  /*-- this is the original position of the tooltip when it's hidden */
+        left: 21em;
         margin-left: 0;	
         /*-- set opacity to 0 otherwise our animations won't work */
         opacity: 0;
