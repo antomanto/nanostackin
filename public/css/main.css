@@ -208,6 +208,12 @@ h1, h2, h3, h4, h5, p, a {
 
 
 /*Footer CSS */
+.footer_component {
+    margin-top: auto;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
 .footer_component.footer_home {
     position:fixed;
     left:0;
