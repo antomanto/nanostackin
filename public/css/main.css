@@ -208,6 +208,8 @@ h1, h2, h3, h4, h5, p, a {
 
 .nano_hover:hover {
     color:#0066ff;
+    transition:1s ease;
+    transform:translateY(3px);
 }
 
 /*Footer CSS */
