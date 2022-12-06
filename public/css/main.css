@@ -205,7 +205,9 @@ h1, h2, h3, h4, h5, p, a {
     display:none;
     opacity:0;
 }
-
+.nano-hover {
+    transition:500ms ease;
+}
 .nano_hover:hover {
     color:#0066ff;
     transition:1s ease;
