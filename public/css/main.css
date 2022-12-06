@@ -206,6 +206,7 @@ h1, h2, h3, h4, h5, p, a {
     opacity:0;
 }
 .nano-hover {
+    transform:translateY(0px);
     transition:500ms ease;
 }
 .nano_hover:hover {
