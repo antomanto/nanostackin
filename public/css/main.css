@@ -206,6 +206,9 @@ h1, h2, h3, h4, h5, p, a {
     opacity:0;
 }
 
+.nano_hover:hover {
+    color:#0066ff;
+}
 
 /*Footer CSS */
 .footer_component {
