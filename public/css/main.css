@@ -1,6 +1,7 @@
 :root {
     --background-main: #18191A;
     --lighter-main: #f5f4ee;
+    --accent-main: #0066ff;
 }
 .container {
     position:relative;
@@ -22,7 +23,47 @@ a {
 a:hover {
     outline:0;
 }
-
+body {
+    margin: 0;
+    overflow: hidden;
+    /*background: radial-gradient(black, (220, 30%, 20%), hsl(220, 50%, 30%));*/
+      background-color: var(--background-main);
+  }
+  
+  /* - - - starfield effect - - - */
+  
+  #starfield {
+    z-index: -1;
+    isolation: isolate;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .star-angle {
+    position: absolute;
+    height: 150vmax;
+    /* outline: 1px solid rgba(255, 255, 255, .03); */
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .star {
+    position: absolute;
+    top: 55%;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: gray;
+    animation: stars cubic-bezier(.95,.05,.8,.04) infinite;
+  }
+  
+  @keyframes stars {
+    0% {top: 50%; scale: 0%;}
+    100% {top: 100%; scale: 100%;}
+  }
 .body_home {
     background-color: var(--background-main);
 }
