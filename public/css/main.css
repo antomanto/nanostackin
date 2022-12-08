@@ -246,10 +246,8 @@ h1, h2, h3, h4, h5, p, a {
     display:none;
     opacity:0;
 }
-.nano-hover {
-    transition:all 1s ease;
-}
-.nano_hover:hover {
+
+.nanonano:hover, .stackostacko:hover {
     color:#0066ff;
     transition:all 1s ease;
     transform:translateY(3px);
