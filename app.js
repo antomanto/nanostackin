@@ -163,6 +163,41 @@ res.render('searchresults', {contactsdata: parsedResults});
   }
 });
 
+app.get('/list-change', (req, res) => {
+  if (isAuthorized(req.sessionID)) {
+    res.render('list-change');
+  } else {
+    res.render('adminInstall');
+  }
+});
+
+app.post("/list-change", async (req, res) => {
+  if (isAuthorized(req.sessionID)) {
+    var listNameInput = req.body.list_name;
+    var url = 'https://api.hubapi.com/contacts/v1/lists/597';
+    const listNameChange = async (accessToken) => {
+      try {
+        const headers = {
+          Authorization: `Bearer ${accessToken}`,
+          'Content-Type': 'application/json'
+        };
+        const data = await request.post(url, {headers: headers, json: true});
+        return data;
+      } catch (e) {
+        return {msg: e.message}
+      }
+    };
+    const accessToken = await getAccessToken(req.sessionID);
+    console.log('access token' + accessToken);
+    // const searchResults = await importGet(accessToken);
+    // console.log('search results' + searchResults);
+    // var listChangeResults = JSON.stringify(searchResults);
+   //  var parsedResults = JSON.parse(importResults);
+          } else {
+        res.redirect('/list-change');
+      }
+})
+
 app.get('/imports', (req, res) => { 					  	
   if (isAuthorized(req.sessionID)) {
    res.render('imports');

@@ -241,6 +241,34 @@ h1, h2, h3, h4, h5, p, a {
     display:inline;
     text-decoration: none;
 }
+.intro_text_span {
+    display: inline-block;
+}
+
+.first_letter {
+    transition:0.3s;
+}
+.exploding_word {
+    display: flex!important;
+}
+.exploding {
+    white-space: pre;
+    transition:0.3s;
+    transform: translate3d(0em, 0em, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;
+}
+
+/* .exploding_word:hover > .first_letter {
+    transform: translate3d(-0.125em, -0.175em, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(-11deg) skew(0deg, 0deg); transform-style: preserve-3d;
+}
+
+.exploding_word:hover > .second_letter {
+    transform: translate3d(-0.025em, 0.05em, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(4.5deg) skew(0deg, 0deg); transform-style: preserve-3d;
+}
+
+.exploding_word:hover > .third_letter {
+    transform: translate3d(-0.05em, 0.2em, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(9deg) skew(0deg, 0deg); transform-style: preserve-3d;
+} */
+
 
 .hide {
     display:none;
