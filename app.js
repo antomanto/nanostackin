@@ -189,6 +189,8 @@ app.post("/list-change", async (req, res) => {
     };
     const accessToken = await getAccessToken(req.sessionID);
     console.log('access token' + accessToken);
+    const listResults = await listNameChange(accessToken);
+    console.log ('list results'+listResults);
     // const searchResults = await importGet(accessToken);
     // console.log('search results' + searchResults);
     // var listChangeResults = JSON.stringify(searchResults);
